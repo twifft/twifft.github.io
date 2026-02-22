@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyClipzTikTok - App Information</title>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            color: #333;
+        }
+        header {
+            background: #111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #222;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 14px 0;
+        }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 6px 12px;
+        }
+        nav a:hover {
+            background: #444;
+            border-radius: 6px;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        /* hide all sections */
+        .section { display: none; }
+
+        /* show active */
+        .active { display: block; }
+    </style>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        window.onload = () => showSection('home');
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>DailyClipzTikTok - App Information</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('privacy')">Privacy Policy</a>
+    <a href="#" onclick="showSection('terms')">Terms of Service</a>
+</nav>
+
+<div class="content">
+
+    <!-- HOME SECTION -->
+    <div id="home" class="section">
+        <h2>Welcome</h2>
+        <p>
+            This website provides information about the <strong>DailyClipzTikTok</strong> app.
+            The app generates short, educational or entertainment-based videos using AI
+            and uploads them to TikTok via the TikTok Open API.
+        </p>
+        <p>
+            Use the navigation above to read our Privacy Policy and Terms of Service.
+        </p>
+    </div>
+
+    <!-- PRIVACY POLICY -->
+    <div id="privacy" class="section">
+        <h2>Privacy Policy</h2>
+        <p><strong>Last updated:</strong> 2024-01-01</p>
+
+        <p>
+            This Privacy Policy explains how <strong>DailyClipzTikTok</strong> (“we”, “our”, “the App”) handles data when using our application.
+        </p>
+
+        <h3>1. Data We Collect</h3>
+        <p>
+            DailyClipzTikTok does <strong>not</strong> collect personal data from users outside of what is provided by the TikTok Developer API.
+            TikTok may provide:
+        </p>
+        <ul>
+            <li>Basic profile information</li>
+            <li>Permissions granted by the user</li>
+            <li>Video upload access tokens</li>
+        </ul>
+
+        <h3>2. How We Use Your Data</h3>
+        <p>
+            We only use TikTok-provided data for:
+        </p>
+        <ul>
+            <li>Uploading videos on the user’s behalf</li>
+            <li>Managing captions and upload parameters</li>
+        </ul>
+
+        <h3>3. AI-Generated Content</h3>
+        <p>
+            All videos are generated using automated tools and AI. No personal user data is used in the creation process.
+        </p>
+
+        <h3>4. Data Storage</h3>
+        <p>
+            We do not store any personal TikTok data on external servers.
+            Temporary tokens are only used during the upload process.
+        </p>
+
+        <h3>5. Sharing of Data</h3>
+        <p>We do not share data with any third parties.</p>
+
+        <h3>6. User Rights</h3>
+        <p>
+            Users may revoke API permissions at any time through TikTok's settings.
+        </p>
+
+        <h3>7. Security</h3>
+        <p>
+            We use standard technical measures to ensure data is handled securely.
+        </p>
+
+        <h3>8. Contact</h3>
+        <p>
+            For questions, contact: <strong>your-email@example.com</strong>
+        </p>
+    </div>
+
+    <!-- TERMS OF SERVICE -->
+    <div id="terms" class="section">
+        <h2>Terms of Service</h2>
+        <p><strong>Last updated:</strong> 2024-01-01</p>
+
+        <h3>1. Purpose</h3>
+        <p>
+            DailyClipzTikTok allows users to generate AI-based short videos and upload them to TikTok via the TikTok Open API.
+        </p>
+
+        <h3>2. Use of TikTok API</h3>
+        <p>
+            To upload videos, users must grant permission through TikTok OAuth.
+            Permissions can be revoked at any time.
+        </p>
+
+        <h3>3. User Responsibilities</h3>
+        <ul>
+            <li>Do not upload harmful or illegal content.</li>
+            <li>Do not violate copyright laws.</li>
+            <li>Follow TikTok’s official guidelines.</li>
+        </ul>
+
+        <h3>4. AI-Generated Content</h3>
+        <p>
+            All content produced by the App may contain automated or AI-generated elements.
+            Accuracy is not guaranteed.
+        </p>
+
+        <h3>5. Limitation of Liability</h3>
+        <p>
+            We are not responsible for bans, technical issues, or incorrect AI-generated content.
+        </p>
+
+        <h3>6. Termination</h3>
+        <p>
+            Users may stop using the App at any time.
+            We may restrict access if the App is misused.
+        </p>
+
+        <h3>7. Changes</h3>
+        <p>
+            These terms may be updated. Continued use means acceptance of new terms.
+        </p>
+
+        <h3>8. Contact</h3>
+        <p>
+            For questions, contact: <strong>your-email@example.com</strong>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
