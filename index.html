@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DailyClipzTikTok – AI Fact Uploader</title>
+    <title>DailyClipzTikTok – AI Fact Uploader (Demo)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Styles -->
@@ -15,30 +15,33 @@
     <div class="page">
         <header class="header">
             <div class="logo">DailyClipz<span>TikTok</span></div>
-            <div class="tagline">AI-generated facts, sent straight to TikTok.</div>
+            <div class="tagline">AI-generated facts, sent straight to TikTok. (Demo)</div>
         </header>
 
         <main class="main">
             <section class="hero card">
-                <h1>Manage your AI fact clips</h1>
+                <h1>Manage your AI fact clips (Demo Integration)</h1>
                 <p>
-                    This demo web app shows how <strong>DailyClipzTikTok</strong> interacts with the
-                    TikTok Login Kit and Content Posting API.
-                    Creators log in with TikTok, pick an AI-generated fact video and upload it as a draft.
+                    This page demonstrates how <strong>DailyClipzTikTok</strong> is designed
+                    to interact with TikTok Login and the Content Posting API.
+                    In this demo, no real TikTok API calls are executed – the flow is simulated
+                    for review purposes.
                 </p>
 
                 <div class="hero-buttons">
                     <button id="loginBtn" class="btn primary">
-                        Continue with TikTok
+                        Continue with TikTok (Demo)
                     </button>
                     <button id="logoutBtn" class="btn ghost" hidden>
-                        Disconnect TikTok
+                        Disconnect TikTok (Demo)
                     </button>
                 </div>
 
                 <p class="hint">
-                    In the TikTok review video you can show: opening this page, clicking
-                    <em>Continue with TikTok</em>, authorizing the app, and returning here.
+                    In the TikTok review video, you can show how a user would
+                    click <em>Continue with TikTok</em>, grant access, and return
+                    to this page. Here, this behavior is simulated without any
+                    real OAuth or API usage.
                 </p>
             </section>
 
@@ -46,20 +49,21 @@
                 <section class="card">
                     <h2>Account status</h2>
                     <p id="accountStatus">
-                        Not connected to TikTok yet.
+                        Not connected to TikTok yet. (Demo)
                     </p>
                     <div id="userInfo" class="user-info" hidden>
-                        <p><strong>TikTok user:</strong> <span id="userName"></span></p>
-                        <p><strong>Open ID:</strong> <span id="userId"></span></p>
+                        <p><strong>TikTok user (simulated):</strong> <span id="userName"></span></p>
+                        <p><strong>Open ID (simulated):</strong> <span id="userId"></span></p>
                     </div>
                 </section>
 
                 <section class="card">
-                    <h2>Upload AI fact video (demo)</h2>
+                    <h2>Upload AI fact video (Demo)</h2>
                     <p>
                         Select a short vertical MP4 file with an AI-generated fact.
-                        In a real integration this file is sent to your backend and uploaded
-                        using TikTok’s <code>video.upload</code> scope.
+                        In the real implementation, this file would be sent to a backend
+                        service that calls TikTok’s <code>video.upload</code> endpoint.
+                        Here, the upload is simulated to show the intended workflow.
                     </p>
 
                     <label class="file-input">
@@ -72,8 +76,8 @@
                     </button>
 
                     <p class="tiny">
-                        For TikTok review, you only need to show the interaction:
-                        selecting a file and triggering the upload flow.
+                        For TikTok review, you can demonstrate selecting a file and triggering
+                        the simulated upload flow. No real TikTok API or account data is used.
                     </p>
                 </section>
             </section>
@@ -85,7 +89,7 @@
         </main>
 
         <footer class="footer">
-            <span>DailyClipzTikTok Demo • Built for TikTok Developer Review</span>
+            <span>DailyClipzTikTok Demo • Frontend-only simulation for TikTok Developer Review</span>
         </footer>
     </div>
 
