@@ -2,208 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>DailyClipzTikTok – AI Fact Uploader</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DailyClipzTikTok - App Information</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f7f7f7;
-            color: #333;
-        }
-        header {
-            background: #111;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background: #222;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 14px 0;
-        }
-        nav a {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 6px 12px;
-        }
-        nav a:hover {
-            background: #444;
-            border-radius: 6px;
-        }
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 
-        .content {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            margin-top: 30px;
-        }
-
-        /* hide all sections */
-        .section { display: none; }
-
-        /* show active */
-        .active { display: block; }
-    </style>
-
-    <script>
-        function showSection(id) {
-            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
-
-        window.onload = () => showSection('home');
-    </script>
+    <!-- Simple favicon optional -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 <body>
+    <div class="page">
+        <header class="header">
+            <div class="logo">DailyClipz<span>TikTok</span></div>
+            <div class="tagline">AI-generated facts, sent straight to TikTok.</div>
+        </header>
 
-<header>
-    <h1>DailyClipzTikTok - App Information</h1>
-</header>
+        <main class="main">
+            <section class="hero card">
+                <h1>Manage your AI fact clips</h1>
+                <p>
+                    This demo web app shows how <strong>DailyClipzTikTok</strong> interacts with the
+                    TikTok Login Kit and Content Posting API.
+                    Creators log in with TikTok, pick an AI-generated fact video and upload it as a draft.
+                </p>
 
-<nav>
-    <a href="#" onclick="showSection('home')">Home</a>
-    <a href="#" onclick="showSection('privacy')">Privacy Policy</a>
-    <a href="#" onclick="showSection('terms')">Terms of Service</a>
-</nav>
+                <div class="hero-buttons">
+                    <button id="loginBtn" class="btn primary">
+                        Continue with TikTok
+                    </button>
+                    <button id="logoutBtn" class="btn ghost" hidden>
+                        Disconnect TikTok
+                    </button>
+                </div>
 
-<div class="content">
+                <p class="hint">
+                    In the TikTok review video you can show: opening this page, clicking
+                    <em>Continue with TikTok</em>, authorizing the app, and returning here.
+                </p>
+            </section>
 
-    <!-- HOME SECTION -->
-    <div id="home" class="section">
-        <h2>Welcome</h2>
-        <p>
-            This website provides information about the <strong>DailyClipzTikTok</strong> app.
-            The app generates short, educational or entertainment-based videos using AI
-            and uploads them to TikTok via the TikTok Open API.
-        </p>
-        <p>
-            Use the navigation above to read our Privacy Policy and Terms of Service.
-        </p>
+            <section class="grid">
+                <section class="card">
+                    <h2>Account status</h2>
+                    <p id="accountStatus">
+                        Not connected to TikTok yet.
+                    </p>
+                    <div id="userInfo" class="user-info" hidden>
+                        <p><strong>TikTok user:</strong> <span id="userName"></span></p>
+                        <p><strong>Open ID:</strong> <span id="userId"></span></p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>Upload AI fact video (demo)</h2>
+                    <p>
+                        Select a short vertical MP4 file with an AI-generated fact.
+                        In a real integration this file is sent to your backend and uploaded
+                        using TikTok’s <code>video.upload</code> scope.
+                    </p>
+
+                    <label class="file-input">
+                        <input type="file" id="videoInput" accept="video/mp4,video/*">
+                        <span>Choose video file</span>
+                    </label>
+
+                    <button id="uploadBtn" class="btn secondary">
+                        Upload to TikTok (Demo)
+                    </button>
+
+                    <p class="tiny">
+                        For TikTok review, you only need to show the interaction:
+                        selecting a file and triggering the upload flow.
+                    </p>
+                </section>
+            </section>
+
+            <section class="card">
+                <h2>Log / Demo Output</h2>
+                <pre id="logBox" class="log-box">// Log messages will appear here…</pre>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <span>DailyClipzTikTok Demo • Built for TikTok Developer Review</span>
+        </footer>
     </div>
 
-    <!-- PRIVACY POLICY -->
-    <div id="privacy" class="section">
-        <h2>Privacy Policy</h2>
-        <p><strong>Last updated:</strong> 2024-01-01</p>
-
-        <p>
-            This Privacy Policy explains how <strong>DailyClipzTikTok</strong> (“we”, “our”, “the App”) handles data when using our application.
-        </p>
-
-        <h3>1. Data We Collect</h3>
-        <p>
-            DailyClipzTikTok does <strong>not</strong> collect personal data from users outside of what is provided by the TikTok Developer API.
-            TikTok may provide:
-        </p>
-        <ul>
-            <li>Basic profile information</li>
-            <li>Permissions granted by the user</li>
-            <li>Video upload access tokens</li>
-        </ul>
-
-        <h3>2. How We Use Your Data</h3>
-        <p>
-            We only use TikTok-provided data for:
-        </p>
-        <ul>
-            <li>Uploading videos on the user’s behalf</li>
-            <li>Managing captions and upload parameters</li>
-        </ul>
-
-        <h3>3. AI-Generated Content</h3>
-        <p>
-            All videos are generated using automated tools and AI. No personal user data is used in the creation process.
-        </p>
-
-        <h3>4. Data Storage</h3>
-        <p>
-            We do not store any personal TikTok data on external servers.
-            Temporary tokens are only used during the upload process.
-        </p>
-
-        <h3>5. Sharing of Data</h3>
-        <p>We do not share data with any third parties.</p>
-
-        <h3>6. User Rights</h3>
-        <p>
-            Users may revoke API permissions at any time through TikTok's settings.
-        </p>
-
-        <h3>7. Security</h3>
-        <p>
-            We use standard technical measures to ensure data is handled securely.
-        </p>
-
-        <h3>8. Contact</h3>
-        <p>
-            For questions, contact: <strong>your-email@example.com</strong>
-        </p>
-    </div>
-
-    <!-- TERMS OF SERVICE -->
-    <div id="terms" class="section">
-        <h2>Terms of Service</h2>
-        <p><strong>Last updated:</strong> 2024-01-01</p>
-
-        <h3>1. Purpose</h3>
-        <p>
-            DailyClipzTikTok allows users to generate AI-based short videos and upload them to TikTok via the TikTok Open API.
-        </p>
-
-        <h3>2. Use of TikTok API</h3>
-        <p>
-            To upload videos, users must grant permission through TikTok OAuth.
-            Permissions can be revoked at any time.
-        </p>
-
-        <h3>3. User Responsibilities</h3>
-        <ul>
-            <li>Do not upload harmful or illegal content.</li>
-            <li>Do not violate copyright laws.</li>
-            <li>Follow TikTok’s official guidelines.</li>
-        </ul>
-
-        <h3>4. AI-Generated Content</h3>
-        <p>
-            All content produced by the App may contain automated or AI-generated elements.
-            Accuracy is not guaranteed.
-        </p>
-
-        <h3>5. Limitation of Liability</h3>
-        <p>
-            We are not responsible for bans, technical issues, or incorrect AI-generated content.
-        </p>
-
-        <h3>6. Termination</h3>
-        <p>
-            Users may stop using the App at any time.
-            We may restrict access if the App is misused.
-        </p>
-
-        <h3>7. Changes</h3>
-        <p>
-            These terms may be updated. Continued use means acceptance of new terms.
-        </p>
-
-        <h3>8. Contact</h3>
-        <p>
-            For questions, contact: <strong>your-email@example.com</strong>
-        </p>
-    </div>
-
-</div>
-
+    <!-- Script -->
+    <script src="script.js"></script>
 </body>
 </html>
