@@ -79,6 +79,25 @@ body {
     color: #9ca3af;
 }
 
+.legal-links {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.legal-links a {
+    color: #93c5fd;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.legal-links a:hover {
+    color: #bfdbfe;
+}
+
 .grid {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
@@ -193,4 +212,21 @@ p {
     margin-top: 20px;
     font-size: 0.8rem;
     color: #6b7280;
+}
+
+.footer-links {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.footer-links a:hover {
+    color: #e5e7eb;
 }
